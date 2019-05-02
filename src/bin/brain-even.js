@@ -14,38 +14,20 @@ let attempt = 0;
 while (attempt < QUESTIONS_COUNT) {
   const number = getRandomInt(MAX_RANDOM_NUMBER);
   const isEvenNumber = isEven(number);
-
   console.log(`Question: ${number}`);
 
   const answer = prompt('Your answer:');
+  const isIncorrectAnswer = (answer !== 'yes' && answer !== 'no') || (isEvenNumber && answer === 'no') || (!isEvenNumber && answer === 'yes');
 
-  if (answer !== 'yes' && answer !== 'no') {
-    console.log(`${answer} is wrong answer ;(. Correct answer was 'yes or no'.`);
-    console.log(`Let's try again, ${userName}`);
+  if (isIncorrectAnswer) {
+    const correctAnswer = isEvenNumber ? 'yes' : 'no';
 
-    break;
-  }
-
-  if (isEvenNumber && answer === 'no') {
-    console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-    console.log(`Let's try again, ${userName}`);
-
-    break;
-  }
-
-  if (!isEvenNumber && answer === 'yes') {
-    console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-    console.log(`Let's try again, ${userName}`);
-
+    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
     break;
   }
 
   console.log('Correct!');
-
-  // eslint-disable-next-line no-plusplus
-  attempt++;
+  attempt += 1;
 }
 
-if (attempt === 3) {
-  console.log(`Congratulations, ${userName}!`);
-}
+console.log(`${attempt === 3 ? 'Congratulations' : "Let's try again"}, ${userName}!`);
