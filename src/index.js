@@ -1,11 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const greetingUser = () => {
-  const userName = readlineSync.question('May I have your name? ');
-
-  return `Hello, ${userName}!`;
-};
+const prompt = question => readlineSync.question(`${question} `);
 
 const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 
-export { greetingUser, getRandomInt };
+const isEven = value => value % 2 === 0;
+
+export { prompt, getRandomInt, isEven };
