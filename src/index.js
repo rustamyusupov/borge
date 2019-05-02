@@ -6,4 +6,6 @@ const greetingUser = () => {
   return `Hello, ${userName}!`;
 };
 
-export default greetingUser;
+const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
+
+export { greetingUser, getRandomInt };
