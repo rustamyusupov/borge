@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-import { greetingUser } from '..';
+import { prompt } from '..';
 
 console.log('Welcome to the Brain Games!\n');
-console.log(greetingUser());
+
+const userName = prompt('May I have your name?');
+
+console.log(`Hello, ${userName}`);
