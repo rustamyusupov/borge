@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { prompt, getRandomInt, isEven } from '..';
+import {
+  prompt, getRandomInt, isCorrectAnswer, getCorrectAnswer,
+} from '..';
 
 const QUESTIONS_COUNT = 3;
 const MAX_RANDOM_NUMBER = 100;
@@ -13,14 +15,13 @@ console.log(`Hello, ${userName}\n`);
 let attempt = 0;
 while (attempt < QUESTIONS_COUNT) {
   const number = getRandomInt(MAX_RANDOM_NUMBER);
-  const isEvenNumber = isEven(number);
   console.log(`Question: ${number}`);
 
   const answer = prompt('Your answer:');
-  const isIncorrectAnswer = (answer !== 'yes' && answer !== 'no') || (isEvenNumber && answer === 'no') || (!isEvenNumber && answer === 'yes');
+  const isIncorrectAnswer = !isCorrectAnswer(number, answer);
 
   if (isIncorrectAnswer) {
-    const correctAnswer = isEvenNumber ? 'yes' : 'no';
+    const correctAnswer = getCorrectAnswer(number);
 
     console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
     break;
