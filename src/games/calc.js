@@ -5,7 +5,6 @@ const math = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
   '*': (a, b) => a * b,
-  '/': (a, b) => a / b,
 };
 
 const getRandomChoise = (choices) => {
@@ -17,7 +16,7 @@ const getRandomChoise = (choices) => {
 export default [...new Array(ROUNDS_COUNT)].map(() => {
   const a = getRandomInt();
   const b = getRandomInt();
-  const operation = getRandomChoise(['+', '-', '*', '/']);
+  const operation = getRandomChoise(['+', '-', '*']);
   const res = math[operation](a, b);
 
   return [`${a} ${operation} ${b}`, `${res}`];
