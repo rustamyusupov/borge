@@ -4,4 +4,4 @@
 [![Build Status](https://travis-ci.org/rustamyusupov/project-lvl1-s486.svg?branch=master)](https://travis-ci.org/rustamyusupov/project-lvl1-s486)
 
 ## Setup
-[![asciicast](https://asciinema.org/a/gWmy5YKOr3r7TVKmuhmuuAC9g.svg)](https://asciinema.org/a/gWmy5YKOr3r7TVKmuhmuuAC9g)
+[![asciicast](https://asciinema.org/a/VbORFUSh7JNJwf9MZBBDvaRt6.svg)](https://asciinema.org/a/VbORFUSh7JNJwf9MZBBDvaRt6)
