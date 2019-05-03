@@ -1,6 +1,6 @@
 {
   "name": "borge",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": "Rustam Yusupov",
   "license": "ISC",
   "main": "index.js",
