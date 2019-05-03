@@ -10,7 +10,7 @@ const isCorrectAnswer = (number, answer) => {
   const isEvenNumber = isEven(number);
 
   return (
-    (answer !== 'yes' && answer !== 'no') || (isEvenNumber && answer === 'no') || (!isEvenNumber && answer === 'yes')
+    (answer === 'yes' || answer === 'no') && ((isEvenNumber && answer === 'yes') || (!isEvenNumber && answer === 'no'))
   );
 };
 
