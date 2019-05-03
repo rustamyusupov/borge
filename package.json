@@ -1,6 +1,6 @@
 {
   "name": "borge",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "Rustam Yusupov",
   "license": "ISC",
   "main": "index.js",
@@ -9,8 +9,8 @@
     "prepublishOnly": "npm run build"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
