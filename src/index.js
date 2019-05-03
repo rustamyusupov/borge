@@ -4,9 +4,9 @@ import { ROUNDS_COUNT } from './utils/constants';
 
 const prompt = question => readlineSync.question(`${question} `);
 
-const greetingUser = () => {
+const greetingUser = (question) => {
   console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
+  console.log(`${question}\n`);
 
   const userName = prompt('May I have your name?');
   console.log(`Hello, ${userName}\n`);
@@ -16,14 +16,14 @@ const greetingUser = () => {
 
 const showResult = (result, userName) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
 
-const flow = (qa = []) => {
+const flow = (quiz = []) => {
   let attempt = 0;
 
   while (attempt < ROUNDS_COUNT) {
-    const question = qa[attempt][0];
+    const question = quiz[attempt][0];
     console.log(`Question: ${question}`);
 
-    const correctAnswer = qa[attempt][1];
+    const correctAnswer = quiz[attempt][1];
     const answer = prompt('Your answer:');
 
     if (answer !== correctAnswer) {
@@ -38,9 +38,9 @@ const flow = (qa = []) => {
   return attempt === 3;
 };
 
-const run = (qa) => {
-  const userName = greetingUser();
-  const result = flow(qa);
+const run = (question, quiz) => {
+  const userName = greetingUser(question);
+  const result = flow(quiz);
 
   showResult(result, userName);
 };
