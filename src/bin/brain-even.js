@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import run from '..';
-import qa from '../games/even';
+import quiz from '../games/even';
 
-run(qa);
+run('Answer "yes" if number even otherwise answer "no".', quiz);

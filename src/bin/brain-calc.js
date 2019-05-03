@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import run from '..';
-import qa from '../games/calc';
+import quiz from '../games/calc';
 
-run(qa);
+run('What is the result of the expression?', quiz);
