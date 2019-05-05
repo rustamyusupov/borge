@@ -14,8 +14,6 @@ const greetingUser = (question) => {
   return userName;
 };
 
-const showResult = (result, userName) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
-
 const flow = (quiz = []) => {
   let attempt = 0;
 
@@ -38,8 +36,11 @@ const flow = (quiz = []) => {
   return attempt === 3;
 };
 
-const run = (question, quiz) => {
+const showResult = (result, userName) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
+
+const run = (question, generator) => {
   const userName = greetingUser(question);
+  const quiz = [...new Array(ROUNDS_COUNT)].map(() => generator());
   const result = flow(quiz);
 
   showResult(result, userName);

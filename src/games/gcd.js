@@ -1,5 +1,4 @@
 import getRandomInt from '../utils/getRandomInt';
-import { ROUNDS_COUNT } from '../utils/constants';
 
 const gcd = (a, b) => {
   if (!b) {
@@ -9,10 +8,10 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-export default [...new Array(ROUNDS_COUNT)].map(() => {
+export default () => {
   const a = getRandomInt();
   const b = getRandomInt();
   const res = gcd(a, b);
 
   return [`${a} ${b}`, `${res}`];
-});
+};
