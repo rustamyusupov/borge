@@ -7,6 +7,7 @@
 1. `brain-even` – check the number is even
 2. `brain-calc` – operations with numbers
 3. `brain-gcd` – greatest common divisor
+4. `brain-progression` – missing in the progression
 
 ## Setup
 [![asciicast](https://asciinema.org/a/xCJjAe8lXeEBTOcWXKLF6W7Jk.svg)](https://asciinema.org/a/xCJjAe8lXeEBTOcWXKLF6W7Jk)
