@@ -4,7 +4,9 @@ import gameEngine from '..';
 const maxRandomNumber = 100;
 const sequenceLength = 10;
 
-const getProgression = (a1, d) => [...new Array(sequenceLength)].map((_, idx) => a1 + (idx + 1 - 1) * d);
+const getProgression = (a1, d) => [...new Array(sequenceLength)].map(
+  (_, idx) => a1 + (idx + 1 - 1) * d,
+);
 
 const quiz = () => {
   const a1 = getRandomInt(0, maxRandomNumber);
