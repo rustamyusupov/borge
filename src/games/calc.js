@@ -1,6 +1,6 @@
 import getRandomInt from '../utils/getRandomInt';
-import { MAX_RANDOM_NUMBER } from '../utils/constants';
 
+const maxRandomNumber = 100;
 const operations = ['+', '-', '*'];
 const math = {
   '+': (a, b) => a + b,
@@ -15,8 +15,8 @@ const getRandomChoise = (choices) => {
 };
 
 export default () => {
-  const a = getRandomInt(MAX_RANDOM_NUMBER);
-  const b = getRandomInt(MAX_RANDOM_NUMBER);
+  const a = getRandomInt(maxRandomNumber);
+  const b = getRandomInt(maxRandomNumber);
   const operation = getRandomChoise(operations);
   const res = math[operation](a, b);
   const question = `${a} ${operation} ${b}`;

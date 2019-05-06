@@ -1,5 +1,6 @@
 import getRandomInt from '../utils/getRandomInt';
-import { MAX_RANDOM_NUMBER } from '../utils/constants';
+
+const maxRandomNumber = 100;
 
 const gcd = (a, b) => {
   if (!b) {
@@ -10,8 +11,8 @@ const gcd = (a, b) => {
 };
 
 export default () => {
-  const a = getRandomInt(MAX_RANDOM_NUMBER);
-  const b = getRandomInt(MAX_RANDOM_NUMBER);
+  const a = getRandomInt(maxRandomNumber);
+  const b = getRandomInt(maxRandomNumber);
   const res = gcd(a, b);
   const question = `${a} ${b}`;
   const answer = `${res}`;

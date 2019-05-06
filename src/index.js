@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import { ROUNDS_COUNT } from './utils/constants';
+const roundsCount = 3;
 
 const prompt = question => readlineSync.question(`${question} `);
 
@@ -17,7 +17,7 @@ const greetingUser = (question) => {
 const flow = (quiz = []) => {
   let attempt = 0;
 
-  while (attempt < ROUNDS_COUNT) {
+  while (attempt < roundsCount) {
     const question = quiz[attempt][0];
     console.log(`Question: ${question}`);
 
@@ -40,7 +40,7 @@ const showResult = (result, userName) => console.log(`${result ? 'Congratulation
 
 const run = (question, generator) => {
   const userName = greetingUser(question);
-  const quiz = [...new Array(ROUNDS_COUNT)].map(() => generator());
+  const quiz = [...new Array(roundsCount)].map(() => generator());
   const result = flow(quiz);
 
   showResult(result, userName);

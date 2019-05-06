@@ -1,10 +1,11 @@
 import getRandomInt from '../utils/getRandomInt';
-import { MAX_RANDOM_NUMBER } from '../utils/constants';
+
+const maxRandomNumber = 100;
 
 const isEven = value => value % 2 === 0;
 
 export default () => {
-  const question = getRandomInt(MAX_RANDOM_NUMBER);
+  const question = getRandomInt(maxRandomNumber);
   const answer = isEven(question) ? 'yes' : 'no';
 
   return [question, answer];

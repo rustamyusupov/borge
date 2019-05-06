@@ -1,15 +1,15 @@
 import getRandomInt from '../utils/getRandomInt';
-import { MAX_RANDOM_NUMBER } from '../utils/constants';
 
-const SEQUENCE_LENGTH = 10;
+const maxRandomNumber = 100;
+const sequenceLength = 10;
 
-const getProgression = (a1, d) => [...new Array(SEQUENCE_LENGTH)].map((_, idx) => a1 + (idx + 1 - 1) * d);
+const getProgression = (a1, d) => [...new Array(sequenceLength)].map((_, idx) => a1 + (idx + 1 - 1) * d);
 
 export default () => {
-  const a1 = getRandomInt(MAX_RANDOM_NUMBER);
-  const step = getRandomInt(MAX_RANDOM_NUMBER);
+  const a1 = getRandomInt(maxRandomNumber);
+  const step = getRandomInt(maxRandomNumber);
   const progression = getProgression(a1, step);
-  const elPos = getRandomInt(SEQUENCE_LENGTH);
+  const elPos = getRandomInt(sequenceLength);
   const res = progression[elPos];
 
   progression[elPos] = '..';
