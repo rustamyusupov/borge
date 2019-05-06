@@ -1,4 +1,4 @@
-import getRandomInt from '../utils/getRandomInt';
+import getRandomInt from '../utils';
 
 const maxRandomNumber = 100;
 
@@ -16,7 +16,7 @@ const isPrime = (num) => {
 };
 
 export default () => {
-  const question = getRandomInt(maxRandomNumber);
+  const question = getRandomInt(0, maxRandomNumber);
   const answer = isPrime(question) ? 'yes' : 'no';
 
   return [question, answer];
