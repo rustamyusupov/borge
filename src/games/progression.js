@@ -14,7 +14,8 @@ export default () => {
 
   progression[elPos] = '..';
 
-  const sequence = progression.join(' ');
+  const question = progression.join(' ');
+  const answer = `${res}`;
 
-  return [sequence, `${res}`];
+  return [question, answer];
 };

@@ -18,6 +18,8 @@ export default () => {
   const b = getRandomInt(MAX_RANDOM_NUMBER);
   const operation = getRandomChoise(['+', '-', '*']);
   const res = math[operation](a, b);
+  const question = `${a} ${operation} ${b}`;
+  const answer = `${res}`;
 
-  return [`${a} ${operation} ${b}`, `${res}`];
+  return [question, answer];
 };

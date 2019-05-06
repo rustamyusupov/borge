@@ -15,8 +15,8 @@ const isPrime = (num) => {
 };
 
 export default () => {
-  const num = getRandomInt(MAX_RANDOM_NUMBER);
-  const answer = isPrime(num) ? 'yes' : 'no';
+  const question = getRandomInt(MAX_RANDOM_NUMBER);
+  const answer = isPrime(question) ? 'yes' : 'no';
 
-  return [num, answer];
+  return [question, answer];
 };

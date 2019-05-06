@@ -13,6 +13,8 @@ export default () => {
   const a = getRandomInt(MAX_RANDOM_NUMBER);
   const b = getRandomInt(MAX_RANDOM_NUMBER);
   const res = gcd(a, b);
+  const question = `${a} ${b}`;
+  const answer = `${res}`;
 
-  return [`${a} ${b}`, `${res}`];
+  return [question, answer];
 };
