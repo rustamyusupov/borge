@@ -1,4 +1,5 @@
 import getRandomInt from '../utils';
+import gameEngine from '..';
 
 const maxRandomNumber = 100;
 const operations = ['+', '-', '*'];
@@ -14,7 +15,7 @@ const getRandomChoise = (choices) => {
   return choices[index];
 };
 
-export default () => {
+const quiz = () => {
   const a = getRandomInt(0, maxRandomNumber);
   const b = getRandomInt(0, maxRandomNumber);
   const operation = getRandomChoise(operations);
@@ -23,4 +24,8 @@ export default () => {
   const answer = `${res}`;
 
   return [question, answer];
+};
+
+export default () => {
+  gameEngine('What is the result of the expression?', quiz);
 };

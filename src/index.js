@@ -38,12 +38,10 @@ const flow = (quiz = []) => {
 
 const showResult = (result, userName) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
 
-const run = (question, generator) => {
+export default (question, generator) => {
   const userName = greetingUser(question);
   const quiz = [...new Array(roundsCount)].map(() => generator());
   const result = flow(quiz);
 
   showResult(result, userName);
 };
-
-export default run;
