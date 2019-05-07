@@ -20,9 +20,9 @@ const quiz = () => {
   const a = getRandomInt(0, maxRandomNumber);
   const b = getRandomInt(0, maxRandomNumber);
   const operation = getRandomChoise(operations);
-  const res = math[operation](a, b);
+  const result = math[operation](a, b);
   const question = `${a} ${operation} ${b}`;
-  const answer = `${res}`;
+  const answer = `${result}`;
 
   return [question, answer];
 };

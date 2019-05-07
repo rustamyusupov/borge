@@ -14,12 +14,12 @@ const quiz = () => {
   const step = getRandomInt(0, maxRandomNumber);
   const progression = getProgression(a1, step);
   const elPos = getRandomInt(0, sequenceLength);
-  const res = progression[elPos];
+  const result = progression[elPos];
 
   progression[elPos] = '..';
 
   const question = progression.join(' ');
-  const answer = `${res}`;
+  const answer = `${result}`;
 
   return [question, answer];
 };
