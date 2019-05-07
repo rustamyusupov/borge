@@ -14,34 +14,32 @@ const greetingUser = (rule) => {
   return userName;
 };
 
-const flow = (quiz = []) => {
-  let attempt = 0;
-
-  while (attempt < roundsCount) {
-    const question = quiz[attempt][0];
+const flow = (generator) => {
+  for (let i = 0; i < roundsCount; i += 1) {
+    const quiz = generator();
+    const question = quiz[0];
     console.log(`Question: ${question}`);
 
-    const correctAnswer = quiz[attempt][1];
+    const correctAnswer = quiz[1];
     const answer = prompt('Your answer:');
 
     if (answer !== correctAnswer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      break;
+
+      return false;
     }
 
     console.log('Correct!');
-    attempt += 1;
   }
 
-  return attempt === 3;
+  return true;
 };
 
-const showResult = (result, userName) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
+const showResult = (userName, result) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
 
 export default (rule, generator) => {
   const userName = greetingUser(rule);
-  const quiz = [...new Array(roundsCount)].map(() => generator());
-  const result = flow(quiz);
+  const result = flow(generator);
 
-  showResult(result, userName);
+  showResult(userName, result);
 };
