@@ -1,6 +1,7 @@
 import getRandomInt from '../utils';
 import gameEngine from '..';
 
+const gameRule = 'What is the result of the expression?';
 const maxRandomNumber = 100;
 const operations = ['+', '-', '*'];
 const math = {
@@ -26,6 +27,4 @@ const quiz = () => {
   return [question, answer];
 };
 
-export default () => {
-  gameEngine('What is the result of the expression?', quiz);
-};
+export default () => gameEngine(gameRule, quiz);

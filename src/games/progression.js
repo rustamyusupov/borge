@@ -1,6 +1,7 @@
 import getRandomInt from '../utils';
 import gameEngine from '..';
 
+const gameRule = 'What number is missing in the progression?';
 const maxRandomNumber = 100;
 const sequenceLength = 10;
 
@@ -23,6 +24,4 @@ const quiz = () => {
   return [question, answer];
 };
 
-export default () => {
-  gameEngine('What number is missing in the progression?', quiz);
-};
+export default () => gameEngine(gameRule, quiz);

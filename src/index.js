@@ -4,9 +4,9 @@ const roundsCount = 3;
 
 const prompt = question => readlineSync.question(`${question} `);
 
-const greetingUser = (question) => {
+const greetingUser = (rule) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${question}\n`);
+  console.log(`${rule}\n`);
 
   const userName = prompt('May I have your name?');
   console.log(`Hello, ${userName}\n`);
@@ -38,8 +38,8 @@ const flow = (quiz = []) => {
 
 const showResult = (result, userName) => console.log(`${result ? 'Congratulations' : "Let's try again"}, ${userName}!`);
 
-export default (question, generator) => {
-  const userName = greetingUser(question);
+export default (rule, generator) => {
+  const userName = greetingUser(rule);
   const quiz = [...new Array(roundsCount)].map(() => generator());
   const result = flow(quiz);
 

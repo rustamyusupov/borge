@@ -1,6 +1,7 @@
 import getRandomInt from '../utils';
 import gameEngine from '..';
 
+const gameRule = 'Answer "yes" if number even otherwise answer "no".';
 const maxRandomNumber = 100;
 
 const isEven = value => value % 2 === 0;
@@ -12,6 +13,4 @@ const quiz = () => {
   return [question, answer];
 };
 
-export default () => {
-  gameEngine('Answer "yes" if number even otherwise answer "no".', quiz);
-};
+export default () => gameEngine(gameRule, quiz);

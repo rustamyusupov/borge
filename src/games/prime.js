@@ -1,6 +1,7 @@
 import getRandomInt from '../utils';
 import gameEngine from '..';
 
+const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const maxRandomNumber = 100;
 
 const isPrime = (num) => {
@@ -23,6 +24,4 @@ const quiz = () => {
   return [question, answer];
 };
 
-export default () => {
-  gameEngine('Answer "yes" if given number is prime. Otherwise answer "no".', quiz);
-};
+export default () => gameEngine(gameRule, quiz);
