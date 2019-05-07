@@ -13,7 +13,7 @@ const quiz = () => {
   const firstElement = getRandomInt(0, maxRandomNumber);
   const step = getRandomInt(0, maxRandomNumber);
   const progression = getProgression(firstElement, step);
-  const hiddenElementIndex = getRandomInt(0, sequenceLength);
+  const hiddenElementIndex = getRandomInt(0, sequenceLength - 1);
   const result = progression[hiddenElementIndex];
 
   progression[hiddenElementIndex] = '..';
