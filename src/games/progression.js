@@ -5,18 +5,18 @@ const gameRule = 'What number is missing in the progression?';
 const maxRandomNumber = 100;
 const sequenceLength = 10;
 
-const getProgression = (a1, d) => [...new Array(sequenceLength)].map(
-  (_, idx) => a1 + (idx + 1 - 1) * d,
+const getProgression = (firstElement, step) => [...new Array(sequenceLength)].map(
+  (_, index) => firstElement + index * step,
 );
 
 const quiz = () => {
-  const a1 = getRandomInt(0, maxRandomNumber);
+  const firstElement = getRandomInt(0, maxRandomNumber);
   const step = getRandomInt(0, maxRandomNumber);
-  const progression = getProgression(a1, step);
-  const elPos = getRandomInt(0, sequenceLength);
-  const result = progression[elPos];
+  const progression = getProgression(firstElement, step);
+  const hiddenElementIndex = getRandomInt(0, sequenceLength);
+  const result = progression[hiddenElementIndex];
 
-  progression[elPos] = '..';
+  progression[hiddenElementIndex] = '..';
 
   const question = progression.join(' ');
   const answer = `${result}`;
