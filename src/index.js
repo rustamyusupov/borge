@@ -16,11 +16,10 @@ const greetingUser = (rule) => {
 
 const flow = (generator) => {
   for (let i = 0; i < roundsCount; i += 1) {
-    const quiz = generator();
-    const question = quiz[0];
+    const [question, correctAnswer] = generator();
+
     console.log(`Question: ${question}`);
 
-    const correctAnswer = quiz[1];
     const answer = prompt('Your answer:');
 
     if (answer !== correctAnswer) {
