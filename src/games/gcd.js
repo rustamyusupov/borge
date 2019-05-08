@@ -11,7 +11,7 @@ const quiz = () => {
   const b = getRandomInt(0, maxRandomNumber);
   const result = gcd(a, b);
   const question = `${a} ${b}`;
-  const answer = `${result}`;
+  const answer = String(result);
 
   return [question, answer];
 };

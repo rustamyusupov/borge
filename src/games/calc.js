@@ -22,7 +22,7 @@ const quiz = () => {
   const operation = getRandomChoise(operations);
   const result = math[operation](a, b);
   const question = `${a} ${operation} ${b}`;
-  const answer = `${result}`;
+  const answer = String(result);
 
   return [question, answer];
 };
